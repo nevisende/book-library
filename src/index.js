@@ -6,16 +6,16 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Books from './redux/books/books'
-import Categories from './redux/categories/categories'
-import logo from './assets/logo.svg'
+import Books from './redux/books/books';
+import Categories from './redux/categories/categories';
+import logo from './assets/logo.svg';
 
 const rootElement = document.getElementById('root');
 
 render(
   <BrowserRouter>
     <ul>
-      <img src={logo} alt="logo"/>
+      <img src={logo} alt="logo" />
       <li>
         <Link to="/">Books</Link>
       </li>

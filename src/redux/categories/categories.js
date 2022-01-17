@@ -1,7 +1,5 @@
-export default  function Categories(){
-
-    return(
-      <div>Under construction</div>
-    )
-
+export default function Categories() {
+  return (
+    <div>Under construction</div>
+  );
 }
