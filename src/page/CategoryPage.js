@@ -6,7 +6,7 @@ export default function BookList() {
   const categoriesReducer = useSelector((state) => state.categoriesReducer);
   const dispatch = useDispatch();
 
-  const submitBookToStore = (e) => {
+  const submitCategoryToStore = (e) => {
     e.preventDefault();
     const newCategory = 'adventure';
 
@@ -20,7 +20,7 @@ export default function BookList() {
       <form>
         <input placeholder="Category name" id="nameInput" />
         <input placeholder="Book category" id="categoryInput" />
-        <button type="submit" onClick={(e) => submitBookToStore(e)}>Add</button>
+        <button type="submit" onClick={(e) => submitCategoryToStore(e)}>Add</button>
       </form>
     </ul>
   );

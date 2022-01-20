@@ -6,12 +6,13 @@ import { addBook } from '../redux/books/books';
 export default function BookList() {
   const dispatch = useDispatch();
 
-  const submitBookToStore = () => {
+  const submitBookToStore = (e) => {
+    e.preventDefault();
     const newBook = {
-      id: 0, // make sure it's unique
-      title: 'jaa',
-      author: 'furkan',
-    };
+      id: 0,
+      title: 'Domain Driven Design',
+      author: 'Eric Evans',
+    };// will be interactive and unique when Book apı used.
 
     // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
@@ -23,7 +24,7 @@ export default function BookList() {
       <form>
         <input placeholder="Book name" id="nameInput" />
         <input placeholder="Book category" id="categoryInput" />
-        <button type="submit" onClick={submitBookToStore}>Add</button>
+        <button type="submit" onClick={(e) => submitBookToStore(e)}>Add</button>
       </form>
     </ul>
   );
