@@ -11,6 +11,8 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "web-vitals": "^2.1.3"
   },
   "scripts": {
@@ -18,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "work-linters" : "npx stylelint \"**/*.{css,scss}\" & npx eslint ."
+    "work-linters": "npx stylelint \"**/*.{css,scss}\" & npx eslint ."
   },
   "eslintConfig": {
     "extends": [
