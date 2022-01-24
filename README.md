@@ -2,11 +2,10 @@
 
   ### Book Library
 
-> This project is a single page application built to save books in the library. It is built using React.
+> This project is a single-page application built to save books in the library. It is built by using React, Redux, and Tailwind.
 
 ## Screenshoot:
-It will come soon.
-
+![screen-gif](./src/assets/myScreen.gif)
 ## Available Scripts
 
 In the project directory, you can run:
@@ -53,7 +52,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Live Demo
 
 
-It will be ready after first merge.
+It will be ready after third merge.
 
 
 ## Authors

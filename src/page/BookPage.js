@@ -30,7 +30,7 @@ export default function BookList() {
       item_id: authorName,
       title: bookName,
       category: selectedCategory,
-    };// will be interactive and unique when Book apı used.
+    };
     dispatch(addBook(newBook));
     bookAPI.postBook(newBook);
     setAuthorName('');
@@ -39,34 +39,8 @@ export default function BookList() {
   };
 
   return (
-    <>
-      <form>
-        <label htmlFor="bookName">
-          Book
-          <input id="bookName" placeholder="Book" value={bookName} onChange={(e) => inputChangingHandler(e, setBookName)} />
-        </label>
-        <label htmlFor="author">
-          Author
-          <input id="author" placeholder="Author" value={authorName} onChange={(e) => inputChangingHandler(e, setAuthorName)} />
-        </label>
-        <label htmlFor="selectedCategory">
-          Category
-
-          <select
-            id="selectedCategory"
-            value={selectedCategory}
-            onChange={(e) => inputChangingHandler(e, setSelectedCategory)}
-            onBlur={(e) => inputChangingHandler(e, setSelectedCategory)}
-          >
-            <option placeholder="Category" />
-            {categoryList.sort().map((categor) => (
-              <option key={categor} value={categor}>{categor}</option>))}
-
-          </select>
-        </label>
-        <button type="submit" onClick={(e) => submitBookToStore(e)}>Add</button>
-      </form>
-      <ul>
+    <main className="bg-[#f5f6fa] pb-24 border-t-2">
+      <ul className="flex flex-col mx-20 pt-8 pb-8">
         {bookList.sort((a, b) => {
           const fa = a.category.toLowerCase();
           const fb = b.category.toLowerCase();
@@ -79,11 +53,31 @@ export default function BookList() {
           }
           return 0;
         }).map((book) => (
-          <li key={book.item_id}>
+          <li key={book.item_id} className="bg-white border-[1px] border-gray-300 rounded my-2 px-6 py-8 flex justify-between">
             <Book id={book.item_id} title={book.title} category={book.category} />
           </li>
         ))}
       </ul>
-    </>
+      <hr className="mx-20" />
+      <h2 className="text-gray-400 w-full px-20 my-5 font-bold">ADD NEW  BOOK</h2>
+      <form className="flex px-20 gap-8">
+        <input className="border-2 py-1 px-4 flex-1 rounded" id="bookName" placeholder="Book Title" value={bookName} onChange={(e) => inputChangingHandler(e, setBookName)} />
+        <input className="border-2 py-1 px-4 flex-1 rounded" id="author" placeholder="Author" value={authorName} onChange={(e) => inputChangingHandler(e, setAuthorName)} />
+        <select
+          className="border-2 py-1 px-4 flex-1 text-gray-400 rounded"
+          id="selectedCategory"
+          value={selectedCategory}
+          onChange={(e) => inputChangingHandler(e, setSelectedCategory)}
+          onBlur={(e) => inputChangingHandler(e, setSelectedCategory)}
+        >
+          <option>Category</option>
+          {categoryList.sort().map((categor) => (
+            <option key={categor} value={categor}>{categor}</option>))}
+
+        </select>
+
+        <button className="py-1 px-10 flex-none bg-[#0290ff] text-white rounded" type="submit" onClick={(e) => submitBookToStore(e)}>Add Book</button>
+      </form>
+    </main>
   );
 }
